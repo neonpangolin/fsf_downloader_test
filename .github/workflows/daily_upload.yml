@@ -20,7 +20,7 @@ jobs:
     - name: Move old files to "old" folder
       run: |
         mkdir -p old  # Create the "old" folder if it doesn't exist
-        mv *.txt old/  # Move all txt files to the "old" folder
+        mv *.json old/  # Move all json files to the "old" folder
 
     - name: Add and commit new file
       run: |
