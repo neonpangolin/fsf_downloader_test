@@ -11,11 +11,11 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Use v4 for the latest updates
 
     - name: Download the file from a website
       run: |
-        curl -o targets.nested.json https://data.opensanctions.org/datasets/20241115/eu_fsf/targets.nested.json  # Replace with your URL
+        curl -o targets.nested.json https://data.opensanctions.org/datasets/20241115/eu_fsf/targets.nested.json
 
     - name: Move old files to "old" folder
       run: |
@@ -34,5 +34,5 @@ jobs:
       run: |
         mv targets.nested.json targets.nested.json  # Ensure the new file is added
         git add targets.nested.json
-        git commit -m "Upload targets.nested.json"
+        git commit -m "Upload new targets.nested.json file"
         git push origin main  # Push the new file to GitHub
